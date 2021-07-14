@@ -1,0 +1,3 @@
+https://www.digitalocean.com/community/tutorials/use-expressjs-to-deliver-html-files
+
+https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application
