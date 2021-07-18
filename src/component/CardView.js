@@ -15,28 +15,21 @@ const CardView = ({item}) => {
     }
 
     const saveItem = () => {
+        // code goes for renewing
         console.log(item)
     }
     
     return(
         <td>
-        <Card >
-           
-                    <Card.Title className="text-center pt-pb-1">Status - {item.status} </Card.Title>
-                    { item.expiryDate && <Card.Subtitle className="p-1"> Expiry Date - {item.expiryDate} </Card.Subtitle> }
-                    
-                    
-                   
-                        <Card.Footer className="text-muted text-center">Duration {  Duration( item.expiryDate) }  days left.
-                        </Card.Footer>
-                    
-                    <Card.Text>Note - </Card.Text>
-                    
-                        <div className="text-center mb-1">
-                            <Button variant="primary" className="cardPostBtn cyanBColor" onClick={() => saveItem()}>Manage</Button>
-                        </div>
-                   
-        </Card>
+            <Card className="p-1" >           
+                <Card.Title className="text-center pt-pb-1">Status - {item.status} </Card.Title>
+                { item.expiryDate && <Card.Subtitle className="p-1"> Expiry Date - {item.expiryDate} </Card.Subtitle> }
+                <Card.Footer className="text-muted text-center">Duration {  Duration( item.expiryDate) }  days left. </Card.Footer>
+                <Card.Text>Note - </Card.Text>
+                <div className="text-center mb-1">
+                    <Button variant="primary" className="cardPostBtn cyanBColor" onClick={() => saveItem()}>Manage</Button>
+                </div>                   
+            </Card>
         </td>
     )
 }

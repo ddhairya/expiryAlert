@@ -11,6 +11,9 @@ const Style = styled.div`
         font-size: x-large;
         font-weight: bold
     }
+    .valign{
+        vertical-align:middle;
+    }
     .width40pt{
         width:40%;
     }

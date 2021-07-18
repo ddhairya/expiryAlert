@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {Jumbotron, Table  } from "react-bootstrap";
 import CardView from "./CardView";
+import CardTitle from "./CardTitle";
 
 const MainItemView = () => {
 
@@ -8,8 +9,12 @@ const MainItemView = () => {
         {
             "id":1,
             "title":"Sharp Renewal",
+            "company":"La Brioche",
+            "location":"Head Office",
+            "user":"Dhairya",
             "status": "Notify",
             "expiryDate":'27-07-2021',
+            "alert":30, 
             "frequency": 4
         },
         {
@@ -22,7 +27,7 @@ const MainItemView = () => {
     ])
     return (
         <Jumbotron>
-            <Table striped>
+            <Table striped >
                 <thead>
                     <tr>
                         <th>#</th>
@@ -33,22 +38,17 @@ const MainItemView = () => {
                 <tbody>
                     {
                         items.map(item => 
-                        
                             <tr key={item.id}>
                                 <td>{item.id}</td>
-                                <td className="tittleCenter xlfont width40pt">{item.title}</td>
+                                <CardTitle item={item} />
                                 <CardView item={item} />
-                                
                             </tr>
-                        
-        
-                    )}
-                    
+                        )
+                    }
                 </tbody>
             </Table>
         </Jumbotron>
     )
-
 }
 
 export default MainItemView
