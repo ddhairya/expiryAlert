@@ -1,3 +1,6 @@
 https://www.digitalocean.com/community/tutorials/use-expressjs-to-deliver-html-files
 
 https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application
+
+
+https://medium.com/weekly-webtips/use-react-with-json-server-and-create-simple-crud-app-b2bf58cd4558

@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 var moment = require('moment')
 
 const CardView = ({item}) => {
-    console.log(item.status)
+    // console.log(item.status)
     // const [stageItem, setStageItem] = useState(stage)
     
 
@@ -25,9 +25,11 @@ const CardView = ({item}) => {
                 <Card.Title className="text-center pt-pb-1">Status - {item.status} </Card.Title>
                 { item.expiryDate && <Card.Subtitle className="p-1"> Expiry Date - {item.expiryDate} </Card.Subtitle> }
                 <Card.Footer className="text-muted text-center">Duration {  Duration( item.expiryDate) }  days left. </Card.Footer>
-                <Card.Text>Note - </Card.Text>
+                <Card.Text><i>Note</i> - {item.note}</Card.Text>
                 <div className="text-center mb-1">
-                    <Button variant="primary" className="cardPostBtn cyanBColor" onClick={() => saveItem()}>Manage</Button>
+                    <Link to={`/items/${item.id}`}>
+                        <Button variant="primary" className="cardPostBtn cyanBColor" onClick={() => saveItem()}>Manage</Button>
+                    </Link>
                 </div>                   
             </Card>
         </td>

@@ -1,14 +1,28 @@
-import {Container, Jumbotron } from "react-bootstrap";
 import GStyle from "./assests/style/global";
 import NavigationBar from "./component/NavigationBar";
 import MainItemView from "./component/MainItem";
+import Create from "./component/Create"
+import CardDetails from "./component/CardDetails";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <GStyle>
-      <NavigationBar/>
-      <MainItemView/>
-    </GStyle>
+    <Router>
+      <GStyle>
+        <NavigationBar/>
+          <Switch>
+            <Route exact path="/">
+              <MainItemView/>
+            </Route>
+            <Route path="/add">
+              <Create/>
+            </Route>
+            <Route path="/items/:id">
+              <CardDetails/>
+            </Route>
+          </Switch>
+      </GStyle>
+    </Router>
   );
 }
 

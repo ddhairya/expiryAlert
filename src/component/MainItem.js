@@ -1,30 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Jumbotron, Table  } from "react-bootstrap";
 import CardView from "./CardView";
 import CardTitle from "./CardTitle";
 
 const MainItemView = () => {
 
-    const [items, setItem] = useState([
-        {
-            "id":1,
-            "title":"Sharp Renewal",
-            "company":"La Brioche",
-            "location":"Head Office",
-            "user":"Dhairya",
-            "status": "Notify",
-            "expiryDate":'27-07-2021',
-            "alert":30, 
-            "frequency": 4
-        },
-        {
-            "id":2,
-            "title":"alahliagroup domain Renewal",
-            "status": "Done",
-            "expiryDate":'27-07-2022',
-            "frequency": 4
-        }
-    ])
+    const [items, setItem] = useState(null)
+
+    useEffect(() => {
+        const abortCont = new AbortController()
+        fetch('http://localhost:8081/items', 
+            {
+                signal: abortCont.signal
+            }    
+        )
+        .then(res => res.json())
+        .then(data => setItem(data.items))
+        .catch(err => console.log(err))
+
+        return () => abortCont.abort()
+    },[])
     return (
         <Jumbotron>
             <Table striped >
@@ -36,7 +31,7 @@ const MainItemView = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    {items &&
                         items.map(item => 
                             <tr key={item.id}>
                                 <td>{item.id}</td>

@@ -28,7 +28,23 @@ const Style = styled.div`
         vertical-align: middle;
         text-align: center;
     }
-
+    .txtDecNone{
+        text-decoration: none !important
+    }
+    .formLab{
+        width: 30%;
+        color:#06bcee;
+        font-weight:bolder
+    }
+    .form{
+        margin: 1rem 5rem 1rem 5rem;
+        text-align: center;
+    }
+    .formIO{
+        width: 40%;
+        margin: 0.5rem;
+        padding: 0.1rem;
+    }
 `;
 
 export default Style
