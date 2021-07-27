@@ -14,7 +14,7 @@ const CardDetails = () => {
     const [frequency, setFrequency] = useState("")
     const [note, setNote] = useState("")
     const {id} = useParams();
-    const history = useHistory
+    const history = useHistory();
 
     useEffect(() => {
         const abortCont = new AbortController()
