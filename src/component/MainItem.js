@@ -9,7 +9,7 @@ const MainItemView = () => {
 
     useEffect(() => {
         const abortCont = new AbortController()
-        fetch('http://localhost:8081/items', 
+        fetch('http://172.17.7.5:8081/items', 
             {
                 signal: abortCont.signal
             }    

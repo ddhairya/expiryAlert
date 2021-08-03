@@ -45,6 +45,11 @@ const Style = styled.div`
         margin: 0.5rem;
         padding: 0.1rem;
     }
+    .placeholder{
+        color: #06bcee;
+        font-style: italic;
+        opacity: 0.7;
+    }
 `;
 
 export default Style

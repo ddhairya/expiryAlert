@@ -1,5 +1,6 @@
 const express = require("express")
 const jsonData = require('./model/item.json');
+const locData = require('./model/loc.json');
 const app = express()
 const cors = require("cors")
 const port = 8081;
@@ -19,6 +20,20 @@ app.use(cors())
 app.get('/items', function(req, res){
 
     res.send(jsonData)
+})
+
+// GET all data
+app.get('/locs/', function(req,res){
+    // const loc = locData.locs.find(loc => loc.comp === req.params.comp)
+    // console.log(loc.locations)
+    res.send([""])
+})
+
+// GET  loc data
+app.get('/locs/:comp', function(req,res){
+    const loc = locData.locs.find(loc => loc.comp === req.params.comp)
+    // console.log(loc.locations)
+    res.send(loc.locations)
 })
 
 // GET particular item

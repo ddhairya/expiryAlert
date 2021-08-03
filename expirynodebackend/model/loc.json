@@ -1,0 +1,22 @@
+{"locs":[
+    {
+        "comp":"AATA",
+        "locations":["CPU","DXB"]
+    },
+    {
+        "comp":"LaBrioche",
+        "locations":["AD Mall","Bawadi Mall" ,"Marina Mall","Yas Mall"]
+    },
+    {
+        "comp":"AGTC",
+        "locations":["Acc Office","Head Office"]
+    },
+    {
+        "comp":"Vapiano",
+        "locations":["AD Mall","Bawadi Mall","Marina Mall","Nakhel","Yas Mall" ]
+    },
+    {
+        "comp":"Sketchley",
+        "locations":["Al Rayana","Gate Tower","Khaldiya","Reem Boutiq","United Square"]
+    }
+]}
