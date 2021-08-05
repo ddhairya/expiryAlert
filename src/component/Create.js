@@ -98,7 +98,7 @@ const Create = () => {
                     </div>  
                     <div>
                         <label className="formLab" >End User: </label>
-                        <input required className="formIO" placeholder="Person who is using/responsible." type="text" value={user}  name="user" onChange={(e) => setUser(e.target.value)} />
+                        <input required className="formIO" placeholder="Person who is using." type="text" value={user}  name="user" onChange={(e) => setUser(e.target.value)} />
                     </div>  
                     <div>
                         <label className="formLab" >Status: </label>

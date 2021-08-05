@@ -3,10 +3,11 @@ const jsonData = require('./model/item.json');
 const locData = require('./model/loc.json');
 const app = express()
 const cors = require("cors")
-const port = 8081;
+const port = process.env.PORT || 8081;
 const bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
 const fs = require('fs');
+var moment = require('moment')
 
 app.use(cors())
 
@@ -18,18 +19,38 @@ app.use(cors())
 
 // GET all data
 app.get('/items', function(req, res){
-
-    res.send(jsonData)
+    
+    if (req.query.sortBy == 'title'){
+        jsonData.items.sort( 
+            (a,b) => (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase) ? -1 : (a.title.toLocaleLowerCase > b.title.toLocaleLowerCase) ? 1 : 0
+        )
+        res.send(jsonData)   
+    }
+    else if (req.query.sortBy == 'expiryDate'){
+        jsonData.items.sort( 
+            (a,b) => moment(a.expiryDate, 'DD-MM-YYYY') - moment(b.expiryDate, 'DD-MM-YYYY')
+        )
+        res.send(jsonData)
+    }
+    else if (req.query.sortBy == 'status'){
+        jsonData.items.sort( 
+            (a,b) => (a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase) ? -1 : (a.status.toLocaleLowerCase > b.status.toLocaleLowerCase) ? 1 : 0
+        )
+        res.send(jsonData)   
+    }
+    else{
+        res.send(jsonData)
+    }
 })
 
-// GET all data
+// GET all location data
 app.get('/locs/', function(req,res){
     // const loc = locData.locs.find(loc => loc.comp === req.params.comp)
     // console.log(loc.locations)
     res.send([""])
 })
 
-// GET  loc data
+// GET loc data based on company selected
 app.get('/locs/:comp', function(req,res){
     const loc = locData.locs.find(loc => loc.comp === req.params.comp)
     // console.log(loc.locations)
@@ -43,7 +64,6 @@ app.get('/items/:id',(req,res) => {
 
     res.send(item)
 })
-
 
 // POST /endpoint expects JSON body
 app.post('/items', jsonParser,  function (req, res) {

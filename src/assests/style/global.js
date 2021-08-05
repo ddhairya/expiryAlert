@@ -49,6 +49,12 @@ const Style = styled.div`
         color: #06bcee;
         font-style: italic;
         opacity: 0.7;
+    }.txtAlignEnd{
+        text-align: end;
+    }.formIOsm{
+        width: 20%;
+        margin: 0.5rem;
+        padding: 0.1rem;
     }
 `;
 
