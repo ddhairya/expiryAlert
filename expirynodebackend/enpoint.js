@@ -19,28 +19,48 @@ app.use(cors())
 
 // GET all data
 app.get('/items', function(req, res){
-    
-    if (req.query.sortBy == 'title'){
+    if (req.query.sortBy == 'title' ){
         jsonData.items.sort( 
             (a,b) => (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase) ? -1 : (a.title.toLocaleLowerCase > b.title.toLocaleLowerCase) ? 1 : 0
         )
-        res.send(jsonData)   
+        if(req.query.filterBy != 'null') {
+            // console.log(req.query.filterBy)
+            let jData = {}
+            jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
+            res.send(jData)
+        }
+        else res.send(jsonData)   
     }
-    else if (req.query.sortBy == 'expiryDate'){
+    else if (req.query.sortBy == 'expiryDate' ){
         jsonData.items.sort( 
             (a,b) => moment(a.expiryDate, 'DD-MM-YYYY') - moment(b.expiryDate, 'DD-MM-YYYY')
         )
-        res.send(jsonData)
+        if(req.query.filterBy != 'null') {
+            // console.log(req.query.filterBy)
+            let jData = {}
+            jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
+            res.send(jData)
+        }else res.send(jsonData)
     }
     else if (req.query.sortBy == 'status'){
         jsonData.items.sort( 
             (a,b) => (a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase) ? -1 : (a.status.toLocaleLowerCase > b.status.toLocaleLowerCase) ? 1 : 0
         )
-        res.send(jsonData)   
+        if(req.query.filterBy != 'null') {
+            // console.log(req.query.filterBy)
+            let jData = {}
+            jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
+            res.send(jData)
+        }else res.send(jsonData)   
     }
-    else{
-        res.send(jsonData)
+    else if(req.query.filterBy != 'null'){
+        // console.log(req.query.filterBy)           
+        let jData = {}
+        jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
+        res.send(jData)
     }
+    else  res.send(jsonData) 
+    
 })
 
 // GET all location data

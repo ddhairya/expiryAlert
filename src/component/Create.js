@@ -105,7 +105,6 @@ const Create = () => {
                         {/* <input required className="formIO" type="text" value={status}   name="status" onChange={(e) => setStatus(e.target.value)} /> */}
                         <select required className="formIO" onChange={(e) => setStatus(e.target.value)}>
                             <option value="Inital"> Inital </option>
-                            <option value="Renewed"> Renewed </option>
 
                         </select>
                     </div>  

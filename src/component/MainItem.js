@@ -7,10 +7,11 @@ const MainItemView = () => {
 
     const [items, setItem] = useState(null)
     const [sort, setSort] = useState(null)
+    const [filter, setFilter] = useState(null)
 
     useEffect(() => {
         const abortCont = new AbortController()
-        fetch(`http://172.17.7.5:8081/items?sortBy=${sort}`, 
+        fetch(`http://172.17.7.5:8081/items?sortBy=${sort}&filterBy=${filter}`, 
             {
                 signal: abortCont.signal
             }    
@@ -20,7 +21,7 @@ const MainItemView = () => {
         .catch(err => console.log(err))
 
         return () => abortCont.abort()
-    },[sort])
+    },[sort, filter])
     return (
         <Jumbotron>
             <Table striped >
@@ -33,6 +34,17 @@ const MainItemView = () => {
                                 <option value="title" >Title</option>
                                 <option value="expiryDate"> Expiry Date</option>
                                 <option value="status">Status</option>
+                            </select>
+                            <span className="formLab" >FilterBy: </span>
+                            <select className="formIOsm" onChange={(e) => setFilter(e.target.value)}> 
+                                <option className="placeholder" value="">Filter Option</option>
+                                <option value="AATA"> AATA </option>
+                                <option value="AGTC"> AGTC </option>
+                                <option value="Coop"> Coop </option>
+                                <option value="LaBrioche"> LaBrioche </option>
+                                <option value="Oilfiled"> Oilfiled </option>
+                                <option value="Sketchley"> Sketchley </option>
+                                <option value="Vapiano"> Vapiano </option>
                             </select>
                         </th>
                     </tr>
