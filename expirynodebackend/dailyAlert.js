@@ -1,6 +1,7 @@
 const mailalert = require("./mailalert")
 const jsonData = require('./model/item.json');
 var moment = require('moment')
+const fs = require('fs');
 
 const today = moment()
 const cron = require("node-cron")
@@ -41,6 +42,9 @@ cron.schedule('0 8 * * *', () => {
 
     })
     // console.log(jsonData)
+    fs.writeFile('./model/item.json', JSON.stringify(jsonData), function(err){
+        if (err) return console.log(err)
+    } );
     
 
 });

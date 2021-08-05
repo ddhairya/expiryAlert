@@ -56,9 +56,9 @@ const MainItemView = () => {
                 </thead>
                 <tbody>
                     {items &&
-                        items.map(item => 
+                        items.map((item,key) => 
                             <tr key={item.id}>
-                                <td></td>
+                                <td>{key+1}</td>
                                 <CardTitle item={item} />
                                 <CardView item={item} />
                             </tr>
