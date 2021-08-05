@@ -23,7 +23,7 @@ app.get('/items', function(req, res){
         jsonData.items.sort( 
             (a,b) => (a.title.toLocaleLowerCase() < b.title.toLocaleLowerCase) ? -1 : (a.title.toLocaleLowerCase > b.title.toLocaleLowerCase) ? 1 : 0
         )
-        if(req.query.filterBy != 'null') {
+        if(req.query.filterBy != 'null' && req.query.filterBy) {
             // console.log(req.query.filterBy)
             let jData = {}
             jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
@@ -35,7 +35,7 @@ app.get('/items', function(req, res){
         jsonData.items.sort( 
             (a,b) => moment(a.expiryDate, 'DD-MM-YYYY') - moment(b.expiryDate, 'DD-MM-YYYY')
         )
-        if(req.query.filterBy != 'null') {
+        if(req.query.filterBy != 'null' && req.query.filterBy) {
             // console.log(req.query.filterBy)
             let jData = {}
             jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
@@ -46,14 +46,14 @@ app.get('/items', function(req, res){
         jsonData.items.sort( 
             (a,b) => (a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase) ? -1 : (a.status.toLocaleLowerCase > b.status.toLocaleLowerCase) ? 1 : 0
         )
-        if(req.query.filterBy != 'null') {
+        if(req.query.filterBy != 'null' && req.query.filterBy) {
             // console.log(req.query.filterBy)
             let jData = {}
             jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
             res.send(jData)
         }else res.send(jsonData)   
     }
-    else if(req.query.filterBy != 'null'){
+    else if(req.query.filterBy != 'null' && req.query.filterBy){
         // console.log(req.query.filterBy)           
         let jData = {}
         jData["items"] = jsonData.items.filter( item => item.company === req.query.filterBy)
