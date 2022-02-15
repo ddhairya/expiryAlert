@@ -7,13 +7,7 @@ const today = moment()
 const cron = require("node-cron")
 // cron.schedule('* * * * *', () => {
 cron.schedule('0 8 * * *', () => {
-    // console.log('running a task every minute');
-    // loop though data
-    // if expdate - today < 0 -> mail()
-    // elif expdate - today <= {alert} and >= 0
-    // if Number.isInteger(expdate - today/ {freq}) -> mail()
-    // mailalert(sub = 'Notify', msg = 'hello');
-
+    
     jsonData.items.map((item) => {
         const expDate = moment(item.expiryDate, 'DD-MM-YYYY')
         const duration = expDate.diff(today, 'days')

@@ -1,15 +1,15 @@
 {"locs":[
     {
         "comp":"AATA",
-        "locations":["CPU","DXB"]
+        "locations":["CPU"]
     },
     {
         "comp":"LaBrioche",
-        "locations":["AD Mall","Bawadi Mall" ,"Marina Mall","Yas Mall"]
+        "locations":[ "Ad Mall",	"Al Wahda Mall",	"Alain Main",	"AlMuneera",	"AlSeef",	"Bawabat Mall",	"Bawadi Mall",	"Bay Avenue",	"Bluewater",	"CPU",	"Dalma",	"Danet",	"Deerfield",	"Galleria",	"Hili Mall",	"iano Ad Mall",	"IBN",	"Jimi Mall",	"KCA",	"Khalidiya",	"Khalidiya mall",	"Khalifa",	"Makhani",	"Marina Mall",	"Mazyad Mall",	"Mirdiff Mall",	"Pointe",	"Remal Mall",	"Silicon Oasis",	"Souq",	"Yas Mall"]
     },
     {
         "comp":"AGTC",
-        "locations":["Acc Office","Head Office"]
+        "locations":["Ac Office","Head Office"]
     },
     {
         "comp":"Vapiano",
@@ -17,6 +17,14 @@
     },
     {
         "comp":"Sketchley",
-        "locations":["Al Rayana","Gate Tower","Khaldiya","Reem Boutiq","United Square"]
+        "locations":["Al Rayana","CPU","Gate Tower","Khaldiya","Reem Boutiq","United Square"]
+    },
+    {
+        "comp":"Coop",
+        "locations":["ADMALL ",	"AWQAF ",	"BUTEEN ",	"DANA ",	"EMIRATES TOWER ",	"JOWHARA ",	"MINA ",	"PLAZA-30  ",	"SPAR EXPRESS ",	"SPAR KAHLIDIYA ",	"SPAR KCA ",	"SPAR ZAHIA "]
+    },
+    {
+        "comp":"Oilfiled",
+        "locations":["Mussafa"]
     }
 ]}

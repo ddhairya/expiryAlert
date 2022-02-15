@@ -7,7 +7,7 @@ const CardTitle = ({item}) => {
                 <Card.Title className="text-center cyanColor">{item.title} </Card.Title>
                 <Card.Subtitle className="p-1">{item.company} - {item.location}</Card.Subtitle>
                 <Card.Text className="text-center">{item.user}</Card.Text>
-                <Card.Footer className="text-muted text-center"> Alert {item.alert} - days ago</Card.Footer>
+                <Card.Footer className="text-muted text-center"> Alert {item.alert} - days ago / {item.frequency} days</Card.Footer>
             </Card>
         </td>
     )

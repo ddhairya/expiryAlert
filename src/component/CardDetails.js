@@ -78,13 +78,6 @@ const CardDetails = () => {
                     </div>
                     <div>
                         <label className="formLab" >Company: </label>
-                        {/* <Dropdown onSelect= {(e) => setCompany(e.target.value)}>
-                            <Dropdown.Menu>
-                            <Dropdown.Item value="LaBrioche">La Brioche</Dropdown.Item>
-                            <Dropdown.Item value="AGTC">AGTC</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                         */}
                         <select disabled className="formIO" onChange={(e) => setCompany(e.target.value)}>
                             <option value={company}>{company}</option>
                             
@@ -100,7 +93,6 @@ const CardDetails = () => {
                     </div>  
                     <div>
                         <label className="formLab" >Status: </label>
-                        {/* <input className="formIO" type="text" value={status}   name="status" onChange={(e) => setStatus(e.target.value)} /> */}
                         <select required className="formIO" onChange={(e) => setStatus(e.target.value)}>
                             <option value={status}> {status} </option>
                             <option value="Renewed"> Renewed </option>

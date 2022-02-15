@@ -13,14 +13,6 @@ async function mailalert(sub, msg){
     //     tls: { ciphers: 'SSLv3' }
     // }
 
-    // let transporter = nodemailer.createTransport({
-    //     service : 'gmail',
-    //     auth: {
-    //     user: 'labriocheu@gmail.com', 
-    //     pass: 'AlAhlia$2019', 
-    //     },
-    // });
-
     let transporter = nodemailer.createTransport({
 
         host: '192.168.1.17',

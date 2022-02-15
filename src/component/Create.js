@@ -19,7 +19,7 @@ const Create = () => {
 
     useEffect(() => {
         const abortCont = new AbortController()
-        // fetch('http://172.17.7.5:8081/locs/', 
+        
         fetch(`http://172.17.7.5:8081/locs/${company}`,{
                 signal: abortCont.signal
             }    
@@ -28,7 +28,6 @@ const Create = () => {
         .then(data => {
             
             setFetchLoc(data)
-            // console.log(typeof(company))
             //  console.log(data)
         })
         .catch(err => console.log(err))
@@ -88,7 +87,7 @@ const Create = () => {
                         <label className="formLab" >Location: </label>
                         {/* <input required className="formIO" type="text" value={location}  name="location" onChange={(e) => setLocation(e.target.value)} /> */}
                         <select required className="formIO" onChange={(e) => setLocation(e.target.value)}>
-                            
+                            <option className="placeholder" value={location}>Select the location</option>
                             { fetchLoc &&  fetchLoc.map((loc,key) =>
                                 <option key={key} value={loc}>{loc}</option>
                             )}
@@ -102,9 +101,9 @@ const Create = () => {
                     </div>  
                     <div>
                         <label className="formLab" >Status: </label>
-                        {/* <input required className="formIO" type="text" value={status}   name="status" onChange={(e) => setStatus(e.target.value)} /> */}
                         <select required className="formIO" onChange={(e) => setStatus(e.target.value)}>
-                            <option value="Inital"> Inital </option>
+                            <option className="placeholder" value={status}>Select the Status</option>
+                            <option value="Initial"> Initial </option>
 
                         </select>
                     </div>  

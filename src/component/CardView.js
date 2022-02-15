@@ -4,7 +4,6 @@ var moment = require('moment')
 
 const CardView = ({item}) => {
     // console.log(item.status)
-    // const [stageItem, setStageItem] = useState(stage)
     
 
     const Duration = (date1) => {

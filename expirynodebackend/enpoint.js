@@ -11,7 +11,7 @@ var moment = require('moment')
 
 app.use(cors())
 
-// // sendFile will go here
+// // sendFile will go here if want to send any files
 // app.get('/', function(req, res) {
 //     res.sendFile(path.join(__dirname, '/index.html'));
 //   });
